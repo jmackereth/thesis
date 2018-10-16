@@ -1,0 +1,174 @@
+\documentclass[a4paper, 12pt, titlepage]{report}
+
+\usepackage[sumlimits]{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage[small]{caption}
+\usepackage{color}
+\usepackage{epsfig}
+\usepackage{fancyhdr}
+\usepackage[plain]{fancyref}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{latexsym}
+\usepackage{lipsum}
+\usepackage{longtable} 
+\usepackage{lscape}
+\usepackage{multirow}
+\usepackage[round]{natbib}
+\usepackage{rotating}
+\usepackage{setspace}
+\usepackage{subfig}
+\usepackage{supertabular}
+\usepackage{textcomp}
+\usepackage{times}
+\usepackage{upgreek}
+\usepackage{url}
+
+\doublespacing
+\setstretch{1.5}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{3mm}
+%\setlength{\topmargin}{-16mm}
+\setlength{\topmargin}{0mm}
+\setlength{\footskip}{15mm}
+%% Change the following when printing double sided
+\setlength{\oddsidemargin}{15mm}
+\setlength{\evensidemargin}{15mm}
+\setlength{\textheight}{235mm}
+\setlength{\textwidth}{145mm}
+\def\LTcapwidth{145mm}
+\renewcommand{\textfraction}{.3}
+\renewcommand{\topfraction}{.7}
+\renewcommand{\bottomfraction}{.4}
+\renewcommand{\floatpagefraction}{0.55}
+\newlength{\colwidth}
+\setlength{\colwidth}{0.5\textwidth}
+\addtolength{\colwidth}{-0.5\columnsep}
+
+\include{references_abbreviations}
+\fancypagestyle{lxh}{
+  \fancyhf{}
+  \renewcommand{\footrulewidth}{0pt}
+  \renewcommand{\headrulewidth}{0.1pt}
+  \fancyhead[R]{\thepage}
+  \fancyhead[L]{\nouppercase{\slshape \rightmark}}
+  %
+  \renewcommand{\chaptermark}[1]{\markboth{\chaptername \ \thechapter.\ ##1}{}}
+  \renewcommand{\sectionmark}[1]{\markright{\thesection:\ ##1}}
+}
+\graphicspath{{./Plots/}}
+
+
+
+
+
+%% USER DEFINED COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ThesisTitle}{Assessing The Typicality of the Milky Way Through the Analysis of Galactic Surveys and Numerical Simulations}
+\newcommand{\AuthorName}{J. Ted Mackereth}
+\newcommand{\SubmissionDate}{December 2018}
+\newcommand{\afe}{$\mathrm{[\alpha/Fe]}$}
+\newcommand{\feh}{$\mathrm{[Fe/H]}$}
+\newcommand{\mgfe}{$\mathrm{[Mg/Fe]}$}
+\newcommand{\nife}{$\mathrm{[Ni/Fe]}$}
+\newcommand{\alfe}{$\mathrm{[Al/Fe]}$}
+
+
+\begin{document}
+
+
+
+
+
+%% TITLE PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+  \pagestyle{plain}
+    \begin{center}
+      \vspace*{-20mm}
+        \LARGE{\sc \ThesisTitle}\\
+        \vspace*{30mm}
+        \LARGE{\AuthorName}\\
+        \large{Astrophysics Research Institute}\\
+        \vspace{9.0cm}
+        \normalsize{
+          A thesis submitted in partial fulfilment of the requirements of\\
+          Liverpool John Moores University\\
+          for the degree of\\
+          Doctor of Philosophy.\\
+          \SubmissionDate
+        }
+    \end{center}
+\end{titlepage}
+
+
+
+
+
+%% FRONT MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+\include{Front_Matter/declaration}
+\newpage
+\include{Front_Matter/abstract}
+\newpage
+\include{Front_Matter/publications}
+\newpage
+\include{Front_Matter/acknowledgements}
+\newpage
+\include{Front_Matter/quotes}
+
+\newpage
+\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\newpage
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+
+
+
+
+
+%% MAIN MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{arabic}
+\pagestyle{lxh}
+
+\include{Chapters/intro}
+%\include{Chapters/apogee-monoage_clean}
+% ADD CHAPTERS HERE
+
+
+%% APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\svaddcontentsline\addcontentsline
+\renewcommand\addcontentsline[3]{%
+  \ifthenelse{\equal{#1}{lof}}{}%
+  {\ifthenelse{\equal{#1}{lot}}{}{\svaddcontentsline{#1}{#2}{#3}}}}
+
+\appendix
+%\include{Appendices/example}
+%ADD APPENDICES HERE
+
+
+
+
+
+%% BACK MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\addtocontents{toc}{\protect\vspace{12pt}}  % Add some vertical space
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{unsrtnat}
+\bibliography{bib}
+
+
+
+
+
+\end{document}
+
+
+
