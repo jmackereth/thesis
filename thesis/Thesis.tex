@@ -1,47 +1,100 @@
 \documentclass[a4paper, 12pt, titlepage]{report}
 
-\usepackage[sumlimits]{amsmath}
-\usepackage{amssymb}
-\usepackage{amstext}
+
+
+\usepackage[round]{natbib} 
+\usepackage{times,epsfig,natbib}     
+\usepackage{graphicx} %enable graphics - extended
+\usepackage{latexsym}  % define some special maths symbols
+\usepackage{longtable} %split long tables over multiple pages       
+\usepackage{supertabular} %,lscape}  %does exactly what it says on the tin
+\usepackage{rotating} % For sidewaystable and figures
+\usepackage{fancyhdr} %enable goodlooking header n footers
+\usepackage[plain]{fancyref} %enable easier referencing
+\usepackage[sumlimits]{amsmath} %put limits at bottom on subscripts
+\usepackage{amssymb} %enable lots of maths symbols
+\usepackage{amstext} %text in equations
 \usepackage[small]{caption}
-\usepackage{color}
-\usepackage{epsfig}
-\usepackage{fancyhdr}
-\usepackage[plain]{fancyref}
-\usepackage{graphicx}
-\usepackage{ifthen}
-\usepackage{latexsym}
-\usepackage{lipsum}
-\usepackage{longtable} 
-\usepackage{lscape}
-\usepackage{multirow}
-\usepackage[round]{natbib}
-\usepackage{rotating}
+\setcounter{bottomnumber}{0} %no floats allowed at page bottom
+%\setcounter{totalnumber}{1}  %only one float allowed on a text page
+%\newcommand{\topfigrule}{\vspace{0.15cm}\hrule\vspace{-0.4pt}} %draw a seperator under floats
 \usepackage{setspace}
-\usepackage{subfig}
-\usepackage{supertabular}
-\usepackage{textcomp}
-\usepackage{times}
-\usepackage{upgreek}
 \usepackage{url}
+%\usepackage{amssymb}
+%\usepackage{epstopdf}
+\usepackage{color}
+\usepackage{multirow} 
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{ifthen}
+\usepackage{subfig}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\usepackage{sidecap}
+\usepackage{longtable}
+\usepackage{graphics}
+\usepackage{enumerate}
+\usepackage{floatrow}
+\usepackage{upgreek}
+ \usepackage{glossaries}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks = true, citecolor = blue]{hyperref}
+\usepackage{xcolor}
+
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
+
+\usepackage{rotating}
+\usepackage{afterpage}
+\usepackage{pdflscape}
+\usepackage{lipsum}
+
+\usepackage{lineno}
 
 \doublespacing
-\setstretch{1.5}
-\setlength{\parindent}{0mm}
+% The default doublespace (2) is too large
+% The ``singlespace'' environment is provided by doublespace.sty, within
+% which single spacing will apply.
+% To set back to single spacing without removing the ``singlespace''
+% environments, use \setstretch{1}
+\setstretch{1.5}  % Library theses seem to have 7mm spacing from baselines
+                            % of consecutive lines.
+\setlength{\parindent}{5mm}
 \setlength{\parskip}{3mm}
-%\setlength{\topmargin}{-16mm}
 \setlength{\topmargin}{0mm}
 \setlength{\footskip}{15mm}
-%% Change the following when printing double sided
-\setlength{\oddsidemargin}{15mm}
-\setlength{\evensidemargin}{15mm}
+% Change the following when printing double-sided
+\setlength{\oddsidemargin}{10mm}  % This gives a binding margin of 40mm
+\setlength{\evensidemargin}{10mm}
 \setlength{\textheight}{235mm}
-\setlength{\textwidth}{145mm}
+\setlength{\textwidth}{155mm}
 \def\LTcapwidth{145mm}
 \renewcommand{\textfraction}{.3}
 \renewcommand{\topfraction}{.7}
 \renewcommand{\bottomfraction}{.4}
+
 \renewcommand{\floatpagefraction}{0.55}
+
+\sloppy 
+
+
+% \doublespacing
+% \setstretch{1.5}
+% \setlength{\parindent}{0mm}
+% \setlength{\parskip}{3mm}
+% %\setlength{\topmargin}{-16mm}
+% \setlength{\topmargin}{0mm}
+% \setlength{\footskip}{15mm}
+% %% Change the following when printing double sided
+% \setlength{\oddsidemargin}{15mm}
+% \setlength{\evensidemargin}{15mm}
+% \setlength{\textheight}{235mm}
+% \setlength{\textwidth}{145mm}
+% \def\LTcapwidth{145mm}
+% \renewcommand{\textfraction}{.3}
+% \renewcommand{\topfraction}{.7}
+% \renewcommand{\bottomfraction}{.4}
+% \renewcommand{\floatpagefraction}{0.55}
 \newlength{\colwidth}
 \setlength{\colwidth}{0.5\textwidth}
 \addtolength{\colwidth}{-0.5\columnsep}
@@ -64,7 +117,7 @@
 
 
 %% USER DEFINED COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\ThesisTitle}{Assessing The Typicality of the Milky Way Through the Analysis of Galactic Surveys and Numerical Simulations}
+\newcommand{\ThesisTitle}{Unveiling the Formation and Evolution of the Milky Way Through the Analysis of Galactic Surveys and Numerical Simulations}
 \newcommand{\AuthorName}{J. Ted Mackereth}
 \newcommand{\SubmissionDate}{December 2018}
 \newcommand{\afe}{$\mathrm{[\alpha/Fe]}$}
@@ -121,7 +174,10 @@
 
 \newpage
 \addcontentsline{toc}{chapter}{Contents}
+\hypersetup{linkcolor=black}
 \tableofcontents
+\hypersetup{linkcolor=blue}
+
 \newpage
 \addcontentsline{toc}{section}{List of Tables}
 \listoftables
