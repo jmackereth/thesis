@@ -126,7 +126,7 @@
 \newcommand{\nife}{$\mathrm{[Ni/Fe]}$}
 \newcommand{\alfe}{$\mathrm{[Al/Fe]}$}
 
-
+\def\red{\color{red}}
 \begin{document}
 
 
@@ -196,7 +196,9 @@
 \pagestyle{lxh}
 
 \include{Chapters/intro}
-%\include{Chapters/apogee-monoage_clean}
+\include{Chapters/apogee-monoage_clean}
+\include{Chapters/eagle-alpha-resubmit}
+\include{thesis/Chapters/high_eccentricity_pop}
 % ADD CHAPTERS HERE
 
 
@@ -207,7 +209,8 @@
   {\ifthenelse{\equal{#1}{lot}}{}{\svaddcontentsline{#1}{#2}{#3}}}}
 
 \appendix
-%\include{Appendices/example}
+\include{Appendices/appendices1}
+\include{thesis/Appendices/appendices2}
 %ADD APPENDICES HERE
 
 
