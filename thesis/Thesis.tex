@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt, titlepage]{report}
+\documentclass[a4paper, 12pt, titlepage, twoside]{report}
 
 
 
@@ -65,7 +65,7 @@
 \setlength{\footskip}{15mm}
 % Change the following when printing double-sided
 \setlength{\oddsidemargin}{15mm}  % This gives a binding margin of 40mm
-\setlength{\evensidemargin}{15mm}
+\setlength{\evensidemargin}{3mm}
 \setlength{\textheight}{235mm}
 \setlength{\textwidth}{145mm}
 \def\LTcapwidth{145mm}
@@ -164,13 +164,13 @@
 
 \include{Front_Matter/declaration}
 \newpage
+\include{Front_Matter/quotes}
+\newpage
 \include{Front_Matter/abstract}
 \newpage
 \include{Front_Matter/publications}
 \newpage
 \include{Front_Matter/acknowledgements}
-\newpage
-\include{Front_Matter/quotes}
 
 \newpage
 \addcontentsline{toc}{chapter}{Contents}
@@ -179,9 +179,9 @@
 
 
 \newpage
-\addcontentsline{toc}{section}{List of Tables}
-\listoftables
-\newpage
+%\addcontentsline{toc}{section}{List of Tables}
+%\listoftables
+%\newpage
 \addcontentsline{toc}{section}{List of Figures}
 \listoffigures
 \hypersetup{linkcolor=blue}
