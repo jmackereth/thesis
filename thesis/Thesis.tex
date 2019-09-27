@@ -1,0 +1,235 @@
+\documentclass[a4paper, 12pt, titlepage]{report}
+
+
+
+\usepackage[round]{natbib} 
+\usepackage{times,epsfig,natbib}     
+\usepackage{graphicx} %enable graphics - extended
+\usepackage{latexsym}  % define some special maths symbols
+\usepackage{longtable} %split long tables over multiple pages       
+\usepackage{supertabular} %,lscape}  %does exactly what it says on the tin
+\usepackage{rotating} % For sidewaystable and figures
+\usepackage{fancyhdr} %enable goodlooking header n footers
+\usepackage[plain]{fancyref} %enable easier referencing
+\usepackage[sumlimits]{amsmath} %put limits at bottom on subscripts
+\usepackage{amssymb} %enable lots of maths symbols
+\usepackage{amstext} %text in equations
+\usepackage[small]{caption}
+\setcounter{bottomnumber}{0} %no floats allowed at page bottom
+%\setcounter{totalnumber}{1}  %only one float allowed on a text page
+%\newcommand{\topfigrule}{\vspace{0.15cm}\hrule\vspace{-0.4pt}} %draw a seperator under floats
+\usepackage{setspace}
+\usepackage{url}
+%\usepackage{amssymb}
+%\usepackage{epstopdf}
+\usepackage{color}
+\usepackage{multirow} 
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{ifthen}
+\usepackage{subfig}
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\usepackage{sidecap}
+\usepackage{longtable}
+\usepackage{graphics}
+\usepackage{enumerate}
+\usepackage{floatrow}
+\usepackage{upgreek}
+ \usepackage{glossaries}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks = true, citecolor = blue]{hyperref}
+\usepackage{xcolor}
+
+\usepackage{floatrow}
+\floatsetup[table]{capposition=top}
+
+\usepackage{rotating}
+\usepackage{afterpage}
+\usepackage{pdflscape}
+\usepackage{lipsum}
+
+\usepackage{lineno}
+
+\doublespacing
+% The default doublespace (2) is too large
+% The ``singlespace'' environment is provided by doublespace.sty, within
+% which single spacing will apply.
+% To set back to single spacing without removing the ``singlespace''
+% environments, use \setstretch{1}
+\setstretch{1.5}  % Library theses seem to have 7mm spacing from baselines
+                            % of consecutive lines.
+\setlength{\parindent}{5mm}
+\setlength{\parskip}{3mm}
+\setlength{\topmargin}{0mm}
+\setlength{\footskip}{15mm}
+% Change the following when printing double-sided
+\setlength{\oddsidemargin}{10mm}  % This gives a binding margin of 40mm
+\setlength{\evensidemargin}{3mm}
+\setlength{\textheight}{235mm}
+\setlength{\textwidth}{145mm}
+\def\LTcapwidth{145mm}
+\renewcommand{\textfraction}{.3}
+\renewcommand{\topfraction}{.7}
+\renewcommand{\bottomfraction}{.4}
+
+\renewcommand{\floatpagefraction}{0.55}
+
+\sloppy 
+
+
+% \doublespacing
+% \setstretch{1.5}
+% \setlength{\parindent}{0mm}
+% \setlength{\parskip}{3mm}
+% %\setlength{\topmargin}{-16mm}
+% \setlength{\topmargin}{0mm}
+% \setlength{\footskip}{15mm}
+% %% Change the following when printing double sided
+% \setlength{\oddsidemargin}{15mm}
+% \setlength{\evensidemargin}{15mm}
+% \setlength{\textheight}{235mm}
+% \setlength{\textwidth}{145mm}
+% \def\LTcapwidth{145mm}
+% \renewcommand{\textfraction}{.3}
+% \renewcommand{\topfraction}{.7}
+% \renewcommand{\bottomfraction}{.4}
+% \renewcommand{\floatpagefraction}{0.55}
+\newlength{\colwidth}
+\setlength{\colwidth}{0.5\textwidth}
+\addtolength{\colwidth}{-0.5\columnsep}
+
+\include{references_abbreviations}
+\fancypagestyle{lxh}{
+  \fancyhf{}
+  \renewcommand{\footrulewidth}{0pt}
+  \renewcommand{\headrulewidth}{0.1pt}
+  \fancyhead[R]{\thepage}
+  \fancyhead[L]{\nouppercase{\slshape \rightmark}}
+  %
+  \renewcommand{\chaptermark}[1]{\markboth{\chaptername \ \thechapter.\ ##1}{}}
+  \renewcommand{\sectionmark}[1]{\markright{\thesection:\ ##1}}
+}
+\graphicspath{{./Plots/}}
+
+
+
+
+
+%% USER DEFINED COMMANDS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ThesisTitle}{Unveiling the History and Nature of the Milky Way with Galactic Surveys and Numerical Simulations}
+\newcommand{\AuthorName}{J. Ted Mackereth}
+\newcommand{\SubmissionDate}{December 2018}
+\newcommand{\afe}{$\mathrm{[\alpha/Fe]}$}
+\newcommand{\feh}{$\mathrm{[Fe/H]}$}
+\newcommand{\mgfe}{$\mathrm{[Mg/Fe]}$}
+\newcommand{\nife}{$\mathrm{[Ni/Fe]}$}
+\newcommand{\alfe}{$\mathrm{[Al/Fe]}$}
+
+\def\red{\color{red}}
+\begin{document}
+
+
+
+
+
+%% TITLE PAGE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+  \pagestyle{plain}
+    \begin{center}
+      \vspace*{-20mm}
+        \LARGE{\sc \ThesisTitle}\\
+        \vspace*{30mm}
+        \LARGE{\AuthorName}\\
+        \vspace{9cm}
+        \normalsize{
+          A thesis submitted in partial fulfilment of the requirements of\\
+          Liverpool John Moores University\\
+          for the degree of\\
+          Doctor of Philosophy.\\
+          \SubmissionDate
+        }
+    \end{center}
+\end{titlepage}
+
+
+
+
+
+%% FRONT MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+\include{Front_Matter/declaration}
+\newpage
+\include{Front_Matter/quotes}
+\newpage
+\include{Front_Matter/abstract}
+\newpage
+\include{Front_Matter/publications}
+\newpage
+\include{Front_Matter/acknowledgements}
+
+\newpage
+\addcontentsline{toc}{chapter}{Contents}
+\hypersetup{linkcolor=black}
+\tableofcontents
+
+
+\newpage
+%\addcontentsline{toc}{section}{List of Tables}
+%\listoftables
+%\newpage
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\hypersetup{linkcolor=blue}
+\newpage
+
+
+
+
+
+%% MAIN MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{arabic}
+\pagestyle{lxh}
+
+\include{Chapters/intro}
+\include{Chapters/apogee-monoage_clean}
+\include{Chapters/eagle-alpha-resubmit}
+\include{thesis/Chapters/high_eccentricity_pop}
+\include{Chapters/Conclusions}
+% ADD CHAPTERS HERE
+
+
+%% APPENDICES %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\let\svaddcontentsline\addcontentsline
+\renewcommand\addcontentsline[3]{%
+  \ifthenelse{\equal{#1}{lof}}{}%
+  {\ifthenelse{\equal{#1}{lot}}{}{\svaddcontentsline{#1}{#2}{#3}}}}
+
+\appendix
+\include{Appendices/appendices1}
+\include{Appendices/appendices2}
+\include{Appendices/appendices3}
+%ADD APPENDICES HERE
+
+
+
+
+
+%% BACK MATTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\addtocontents{toc}{\protect\vspace{12pt}}  % Add some vertical space
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{mnras}
+\bibliography{bib}
+
+
+
+
+
+\end{document}
+
+
+
