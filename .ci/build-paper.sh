@@ -1,6 +1,6 @@
 #!/bin/bash -x
 
-if git diff --name-only $TRAVIS_COMMIT_RANGE | grep 'cv/'
+if git diff --name-only $TRAVIS_COMMIT_RANGE | grep 'thesis/'
 then
   # Install tectonic using conda
   wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
